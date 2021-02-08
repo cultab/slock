@@ -14,3 +14,13 @@ static const int failonclear = 1;
 
 /* PAM service that's used for authentication */
 static const char* pam_service = "login";
+
+/* default message */
+static const char * message = "Suckless: Software that sucks less.";
+
+/* text color */
+static const char * text_color = "#ffffff";
+
+/* text size (must be a valid size) */
+static const char * font_name = "6x10";
+>>>>>>> 0863595 (applied message patch)
