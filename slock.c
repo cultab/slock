@@ -296,6 +296,7 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 					XSetWindowBackground(dpy, locks[screen]->win, locks[screen]->colors[color]);
 					XClearWindow(dpy, locks[screen]->win);
 					XRaiseWindow(dpy, locks[screen]->win);
+					writemessage(dpy, locks[screen]->win, screen);
 				}
 				XSync(dpy, False);
 
@@ -353,8 +354,10 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 					XClearWindow(dpy, locks[screen]->win);
 				}
 			}
-		} else for (screen = 0; screen < nscreens; screen++)
+		} else for (screen = 0; screen < nscreens; screen++){
 			XRaiseWindow(dpy, locks[screen]->win);
+			writemessage(dpy, locks[screen]->win, screen);
+		}
 	}
 }
 
