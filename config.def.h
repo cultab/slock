@@ -23,7 +23,7 @@ static const char * text_color = "#ffffff";
 
 /* text size (must be a valid size) */
 static const char * font_name = "6x10";
- 
+
 /*
  * Xresources preferences to load at startup
  */

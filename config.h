@@ -13,7 +13,7 @@ static const char *colorname[NUMCOLS] = {
 static const int failonclear = 1;
 
 /* PAM service that's used for authentication */
-static const char* pam_service = "login";
+static const char* pam_service = "system-local-login";
 
 /* default message */
 static const char * message = "Suckless: Software that sucks less.";
@@ -23,3 +23,15 @@ static const char * text_color = "#ffffff";
 
 /* text size (must be a valid size) */
 static const char * font_name = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-ibm-cp437";
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+        // { "foreground",    STRING,  &text_color },
+		{ "background",    STRING,  &colorname[INIT] },
+		{ "color12",       STRING,  &colorname[INPUT] },
+		{ "color9",        STRING,  &colorname[FAILED] },
+		{ "color13",       STRING,  &colorname[PAM] },
+};
+
